@@ -112,7 +112,6 @@
 					<h4>POSTMAN</h4>
 					<h4>Burp suite</h4>
 					<h4>TODO - Modelling tool</h4>
-					<h4>TODO - Store automated tests</h4>
 				</section>
 
 				<section>
@@ -170,8 +169,9 @@
 				</section>
 
 				<section>
-					<img src='./images/postman.png' alt='POSTMAN logo' style='border: none; background: none; box-shadow: none; width: 250px; height: 88px;' />
-					<!-- TODO link to blog post on setting up POSTMAN Proxy -->
+					<img src='./images/postman.png' alt='POSTMAN logo' style='border: none; background: none; box-shadow: none; width: 250px; height: 88px; margin-top: -14px' />
+					<h4><a href='http://mwtestconsultancy.co.uk/blog/proxies-setting-up-postman-proxy/'>Setting up POSTMAN</a></h4>
+					<br />
 					<table style='font-size: 0.75em'>
 						<tr><th>Pros</th><th>Cons</th></tr>
 						<tr><td>Almost all features are free</td><td>Responses are not captured</td></tr>
@@ -182,7 +182,8 @@
 
 				<section>
 					<img src='./images/burpsuite.png' alt='Burp suite logo' style='border: none; background: none; box-shadow: none; width: 250px; height: 88px;' />
-					<!-- TODO link to blog post on setting up POSTMAN Proxy -->
+					<h4><a href='http://mwtestconsultancy.co.uk/blog/proxies-setting-up-burpsuite-proxy/'>Setting up BurpSuite</a></h4>
+					<br />
 					<table style='font-size: 0.75em'>
 						<tr><th>Pros</th><th>Cons</th></tr>
 						<tr><td>Both requests and responses are saved</td><td>Free version doesn't save any app data</td></tr>
@@ -193,23 +194,45 @@
 
 				<section>
 					<h3>Other proxies available</h3>
-					<p>Fiddler</p>
-					<p>Charles</p>
-					<p>Wireshark</p>
-					<p>JMeter</p>
+					<div style='padding-top: 50px;'>
+						<a href='http://www.telerik.com/download/fiddler'><img style='border: none; background: none; box-shadow: none; width: 250px;'src='./images/fiddler.png'></a>
+						<a href='https://www.wireshark.org'><img style='padding-left: 250px; border: none; background: none; box-shadow: none; width: 250px;' src='./images/wireshark.png'></a>
+					</div>
+					<div style='padding-top: 50px;'>
+						<a href='http://www.charlesproxy.com'><img style='border: none; background: none; box-shadow: none; width: 310px;' src='./images/charles.jpg'></a>
+						<a href='http://jmeter.apache.org'><img style='padding-left: 200px; border: none; background: none; box-shadow: none; width: 250px;' src='./images/jmeter.jpg'></a>
+					</div>
 				</section>
 
 				<section>
 					<h3>Using a web proxy</h3>
-					<div><p>Trigger an event in the UI</p></div>
-					<div><p>Review the captured request in the response</p></div>
-					<div><p>Manipulate the captured request to try out new test design ideas</p></div>
+					<br />
+					<div style='font-size: 0.55em'>
+						<div style="width: 250px; height: 220px; float: left;">
+							<img src='./images/ui.png' style='border: none; background: none; box-shadow: none;'/>
+						</div>
+						<div style="width: 250px; height: 220px; float: left; margin-left: 100px">
+							<img src='./images/proxy-example1.png' style='border: none; background: none; box-shadow: none; margin-top: 50px'/>
+						</div>
+						<div style="width: 250px; height: 220px; float: left; margin-left: 100px">
+							<img src='./images/proxy-example2.png' style='border: none; background: none; box-shadow: none;'/>
+						</div>
+					</div>
+					<div style='font-size: 0.55em'>
+						<div style="width: 250px; height: 100px; float: left; display: table; overflow: hidden;">
+							<p style="display: table-cell; vertical-align: middle">Trigger an event in the UI</p>
+						</div>
+						<div style="width: 250px; height: 100px; float: left; display: table; overflow: hidden; margin-left: 100px">
+							<p style="display: table-cell; vertical-align: middle;">Review the captured request in the response</p>
+						</div>
+						<div style="width: 250px; height: 100px; float: left; display: table; overflow: hidden; margin-left: 100px">
+							<p style="display: table-cell; vertical-align: middle;">Manipulate the captured request to try out new test design ideas</p>
+						</div>
+					</div>
 				</section>
 
 				<section>
 					<h3>Firebug / Dev tools</h3>
-					<img src='./images/firebug.png' alt='Firebug example' />
-					<!-- TODO annotate this image -->
 				</section>
 
 				<section>
@@ -244,13 +267,94 @@
 				</section>
 
 				<section>
+					<h3>POSTMAN Collections</h3>
+					<div style='float: left; width: 400px; margin-left: 0px'>
+						<img src='./images/collections.png' style ='border: none; background: none; box-shadow: none'/>
+					</div>
+					<div style='float: left; width: 500px; margin-left: 0px'>
+						<h4>Setup</h4>
+						<ol style='font-size: 0.85em; margin-left: 100px'>
+							<li class='fragment'>Select the Collections tab</li>
+							<li class='fragment'>Click on the folder to create a collection</li>
+							<li class='fragment'>Select a request from history</li>
+							<li class='fragment'>Click the save/disk item to add to a collection</li>
+						</ol>
+					</div>
+				</section>
+
+				<section>
+					<h3>Resource / Query string</h3>
+					<br />
+					<div style='float: left; width: 400px; margin-left: 0px'>
+						<h4>URIs</h4>
+						<ul>
+							<li>Valid and invalid paths</li>
+							<li>Resource identifiers</li>
+						</ul>
+					</div>
+					<div style='float: left; width: 400px; margin-left: 150px'>
+					<h4>Query strings</h4>
+						<ul>
+							<li>Data types</li>
+							<li>Boundaries</li>
+							<li>Robustness principle</li>
+						</ul>
+					</div>
+				</section>
+
+				<section>
+					<h3>Headers</h3>
+					<br />
+					<ul>
+						<li>Missing headers</li>
+						<li>Positive/negative values</li>
+						<li>Redundant headers</li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>Status codes</h3>
+					<br />
+					<table>
+						<tr><td>Positvie codes</td><td>- 200, 201, 304</td></tr>
+						<tr><td>Negative codes</td><td>- 400, 500, 404</td></tr>
+					</table>
+					<br />
+					<small>Do status codes match the way you expect the service to respond?</small>
+				</section>
+
+				<section>
+					<h3>Payloads</h3>
+					<br />
+					<ul>
+						<li>Data types</li>
+						<li>Boundaries</li>
+						<li>Robustness principle</li>
+					</ul>
+				</section>
+
+				<section>
 					<h3>Iteration three - Design</h3>
-					<p>Using your model of the application, design a suite of endpoint tests</p>
-					<p>Using TODO - Which tool?</p>
+					<p>Using POSTMAN collections create a suite of API tests<p>
+					<p>Use your model of the application as reference</p>
 				</section>
 
 				<section>
 					<p>What did you learn?</p>
+				</section>
+
+				<section>
+					<h2>Automation?</h2>
+				</section>
+
+				<section>
+					<h2>Wrapping up</h2>
+				</section>
+
+				<section>
+					<h1>Thank you</h1>
+					<small><p>Restful-booker - <a href="https://github.com/mwinteringham/restful-booker">https://github.com/mwinteringham/restful-booker</a></p></small>
+					<small><p>Slides - <a href="https://github.com/mwinteringham/reveal.js">https://github.com/mwinteringham/reveal.js</a></p></small>
 				</section>
 			</div>
 		</div>
