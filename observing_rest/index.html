@@ -4,7 +4,7 @@
 	<head>
 		<meta charset="utf-8">
 
-		<title>Understanding and Testing RESTful Web Services</title>
+		<title>Observing, modelling and designing test suites for RESTful Web services</title>
 
 		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
 		<meta name="author" content="Hakim El Hattab">
@@ -38,14 +38,19 @@
 
 		<div class="reveal">
 			<div class="slides">
+				<p style='font-size: 0.6em; position: relative; bottom: -93.5%;'><small>Observing, modelling and designing test suites for RESTful Web services - Created by <a href="http://mwtestconsultancy.co.uk">Mark Winteringham</a> / <a href="http://twitter.com/mwtestconsult">@mwtestconsult</a></small></p>
+
 				<section>
-					<h3>Understanding and testing RESTful Web Services</h3>
+					<h3 style='font-size: 1.4em'>Observing, modelling and designing test suites for RESTful Web services</h3>
+					<p style='font-size: 0.6em'>Available at <a href='http://mwtestconsultancy.co.uk/presentations/observing_rest/' alt='slide location'>http://mwtestconsultancy.co.uk/presentations/observing_rest/</a></p>
 					<br />
-					<h4>Observing, modelling and designing test suites for Web Services</h4>
-					<br />
-					<p>
-						<small>Created by <a href="http://mwtestconsultancy.co.uk">Mark Winteringham</a> / <a href="http://twitter.com/mwtestconsult">@mwtestconsult</a></small>
-					</p>
+					<p style="font-size: 0.75em">Please install the following</p>
+					<table style="font-size: 0.6em;">
+						<tr class='first-slide-row'><td>POSTMAN</td><td><a href="https://www.getpostman.com/">www.getpostman.com</a></tr></td>
+						<tr><td>POSTMAN Interceptor</td><td><a href="https://www.getpostman.com/features#interceptor">www.getpostman.com/features#interceptor</a></td>
+						<tr><td>BURPSUITE</td><td><a href="https://portswigger.net/burp/">www.portswigger.net/burp/</a></td>
+					</table>
+
 				</section>
 
 				<section>
@@ -282,7 +287,20 @@
 				<section>
 					<h3>How might you model</h3>
 					<p>No right or wrong way</p>
-					<!-- TODO Show two images 1. grouped by page and 2. grouped by endpoint -->
+				</section>
+
+				<section>
+					<h3>Modelling by API</h3>
+					<img src='./images/api_model.png' style='padding: 10px; border: none; background: #fff; box-shadow: none'/>
+
+					<p class='fragment'>Doesn't give us feedback on how the API is used</p>
+				</section>
+
+				<section>
+					<h3>Modelling by behaviour</h3>
+					<img src='./images/api_behaviour.png' style='padding: 10px; border: none; background: #fff; box-shadow: none'/>
+
+					<p class='fragment'>Models can get quite complicated</p>
 				</section>
 
 				<section>
@@ -425,7 +443,6 @@
 					{ src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
 					{ src: 'plugin/zoom-js/zoom.js', async: true },
 					{ src: 'plugin/notes/notes.js', async: true },
-					{ src: 'socket.io/socket.io.js', async: true },
         			{ src: 'plugin/notes-server/client.js', async: true }
 				]
 			});

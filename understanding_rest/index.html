@@ -44,16 +44,12 @@
 					<h3>Understanding and testing RESTful Web Services</h3>
 
 					<p style='font-size: 0.6em'>Available at <a href='http://mwtestconsultancy.co.uk/presentations/understanding_rest/' alt='slide location'>http://mwtestconsultancy.co.uk/presentations/understanding_rest/</a></p>
-					<hr />
-						<p>Please load up Google Chrome and install</p>
-						<div style="font-size: 0.75em">
-							<p>POSTMAN - REST Client</p>
-							<p style="font-size: 0.75em"><a href="https://www.getpostman.com/">www.getpostman.com</a></p>
-
-							<p>POSTMAN Interceptor</p>
-							<p style="font-size: 0.75em"><a href="https://www.getpostman.com/features#interceptor">www.getpostman.com/features#interceptor</a></p>
-						</div>
-					
+					<br />
+					<p style="font-size: 0.75em">Please load up Google Chrome and install</p>
+					<table style="font-size: 0.6em;">
+						<tr class='first-slide-row'><td>POSTMAN</td><td><a href="https://www.getpostman.com/">www.getpostman.com</a></tr></td>
+						<tr><td>POSTMAN Interceptor</td><td><a href="https://www.getpostman.com/features#interceptor">www.getpostman.com/features#interceptor</a></td>
+					</table>
 				</section>
 
 				<section>
@@ -907,7 +903,7 @@ Cookie: token=abc123
 					{ src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
 					{ src: 'plugin/zoom-js/zoom.js', async: true },
 					{ src: 'plugin/notes/notes.js', async: true },
-					{ src: 'socket.io/socket.io.js', async: true },
+					
         			{ src: 'plugin/notes-server/client.js', async: true }
 				]
 			});
