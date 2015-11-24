@@ -43,7 +43,7 @@
 				<section>
 					<h3>Understanding and testing RESTful Web Services</h3>
 
-					<p style='font-size: 0.6em'>Available at <a href='http://mwtestconsultancy.co.uk/presentations/understanding_rest/' alt='slide location'>http://mwtestconsultancy.co.uk/presentations/understanding_rest/</a></p>
+					<p style='font-size: 0.6em'>Available at <a href='http://mwtestconsultancy.co.uk/presentations/understanding_rest_lite' alt='slide location'>http://mwtestconsultancy.co.uk/presentations/understanding_rest_lite</a></p>
 					<br />
 					<p style="font-size: 0.75em">Please load up Google Chrome and install</p>
 					<table style="font-size: 0.6em;">
@@ -70,7 +70,7 @@
 					<p class="fragment">Explore the basics of a RESTful WebServices</p>
 					<p class="fragment">Build requests to query and manipulate data</p>
 					<p class="fragment">Try out different test design techniques</p>
-					<p class="fragment">Going forward with the skills you've learnt</p>
+					<p class="fragment">Going forward...</p>
 
 					<aside class="notes">
 						Ask if any of the group have experience of testing REST and HTTP
@@ -80,9 +80,7 @@
 				</section>
 
 				<section>
-					<h3>Welcome to 'The best at rest ltd'</h3>
-					<br />
-					<p>Creators of RESTFUL-BOOKER</p>
+					<h3>RESTFUL-BOOKER</h3>
 					<div style="width: 500px; text-align: center; border-top: 1px dotted #000; font-size: 0.75em; margin-left: 230px">
 						<p>A restful webservice that allows hotels to store booking details about their guests</p>
 					</div>
@@ -484,64 +482,6 @@
 				</section>
 
 				<section>
-					<h3>Iteration one - Investigating Read</h3>
-					<h4>Users stories</h4>
-					<div style="width: 315px; height: 400px; float: left; font-size: 0.9em; border-right: 1px dotted #000">
-						<div style="text-align: left">
-							<br />
-							<small>As a user of restful-booker</small>
-							<br />
-							<br />
-							<small>I want to be able to view all current booking IDs</small>
-							<br />
-							<br />
-							<small>So that I can choose an ID to view the booking of</small>
-						</div>
-						<br />
-						<br />
-						<small><a href="https://github.com/mwinteringham/restful-booker#get-booking">GET /booking</a></small>
-					</div>
-
-					<div style="width: 315px; height: 400px; float: left; font-size: 0.9em; border-right: 1px dotted #000">
-						<div style="text-align: center">
-							<br />
-							<small>As a user of restful-booker</small>
-							<br />
-							<br />
-							<small>I want to be able to search on the booking dates</small>
-							<br />
-							<br />
-							<small>So that I can filter the relevant booking IDs I require</small>
-						</div>
-						<br />
-						<br />
-						<small><a href="https://github.com/mwinteringham/restful-booker#get-booking">GET /booking?checkin=*&amp;checkout=*</a></small>
-					</div>
-
-					<div style="width: 315px; height: 400px; float: left; font-size: 0.9em">
-						<div style="text-align: right">
-							<br />
-							<small>As a user of restful-booker</small>
-							<br />
-							<br />
-							<small>I want to be able to retrieve a booking using its ID</small>
-							<br />
-							<br />
-							<small>So that I can view the details of that booking</small>
-						</div>
-						<br />
-						<br />
-						<small><a href="https://github.com/mwinteringham/restful-booker#get-bookingid">GET /booking/{id}</a></small>
-					</div>
-
-					<small>API can be found at: <a href="https://github.com/mwinteringham/restful-booker">github.com/mwinteringham/restful-booker</a></small>
-				</section>
-
-				<section>
-					<p>What did you learn?</p>
-				</section>
-
-				<section>
 					<h2>Create</h2>
 				</section>
 
@@ -661,31 +601,6 @@
 				</section>
 
 				<section>
-					<h3>Iteration two - Investigating Create</h3>
-					<h4>User stories</h4>
-					<div style="margin-left: 315px; width: 315px; height: 400px; font-size: 0.9em; border-right: 1px dotted #000; border-left: 1px dotted #000">
-						<div style="text-align: center">
-							<br />
-							<small>As a user of restful-booker</small>
-							<br />
-							<br />
-							<small>I want to be able to create </small>
-							<br />
-							<br />
-							<small>So that I can choose an ID to view the booking of</small>
-						</div>
-						<br />
-						<br />
-						<small><a href="https://github.com/mwinteringham/restful-booker#post-booking">POST /booking</a></small>
-					</div>
-					<small>API can be found at: <a href="https://github.com/mwinteringham/restful-booker">github.com/mwinteringham/restful-booker</a></small>
-				</section>
-
-				<section>
-					<p>What did you learn?</p>
-				</section>
-
-				<section>
 					<h2>Update/Delete</h2>
 				</section>
 
@@ -777,63 +692,6 @@ Cookie: token=abc123
 				</section>
 
 				<section>
-					<h3>Iteration three - Investigating Update / Delete</h3>
-					<h4>User stories</h4>
-					<div style="width: 315px; height: 400px; float: left; font-size: 0.9em; border-right: 1px dotted #000">
-						<div style="text-align: left">
-							<br />
-							<small>As a user of restful-booker</small>
-							<br />
-							<br />
-							<small>I want to be able to protect create and delete functions</small>
-							<br />
-							<br />
-							<small>So that I can protect the bookings from being changed or deleted</small>
-						</div>
-						<br />
-						<br />
-						<small><a href="https://github.com/mwinteringham/restful-booker#post-auth">POST /auth</a></small>
-					</div>
-
-					<div style="width: 315px; height: 400px; float: left; font-size: 0.9em; border-right: 1px dotted #000">
-						<div style="text-align: center">
-							<br />
-							<small>As a user of restful-booker</small>
-							<br />
-							<br />
-							<small>I want to be able to update a pre-existing booking using its ID</small>
-							<br />
-							<br />
-							<small>So that I can correct and errors made in a booking</small>
-						</div>
-						<br />
-						<br />
-						<small><a href="https://github.com/mwinteringham/restful-booker#put-bookingid">PUT /booking/{id}</a></small>
-					</div>
-
-					<div style="width: 315px; height: 400px; float: left; font-size: 0.9em">
-						<div style="text-align: right">
-							<br />
-							<small>As a user of restful-booker</small>
-							<br />
-							<br />
-							<small>I want to be able to delete a booking using its ID</small>
-							<br />
-							<br />
-							<small>So that I can remove the booking</small>
-						</div>
-						<br />
-						<br />
-						<small><a href="https://github.com/mwinteringham/restful-booker#delete-bookingid">DELETE /booking/{id}</a></small>
-					</div>
-					<small>API can be found at: <a href="https://github.com/mwinteringham/restful-booker">github.com/mwinteringham/restful-booker</a></small>
-				</section>
-
-				<section>
-					<p>What did you learn?</p>
-				</section>
-
-				<section>
 					<h3>Taking RESTful testing further</h3>
 				</section>
 
@@ -875,7 +733,7 @@ Cookie: token=abc123
 				<section>
 					<h1>Thank you</h1>
 					<small><p>Restful-booker - <a href="https://github.com/mwinteringham/restful-booker">https://github.com/mwinteringham/restful-booker</a></p></small>
-					<small><p>Slides - <a href="http://mwtestconsultancy.co.uk/presentations/understanding_rest/">http://mwtestconsultancy.co.uk/presentations/understanding_rest/</a></p></small>
+					<small><p>Slides - <a href="http://mwtestconsultancy.co.uk/presentations/understanding_rest_lite">http://mwtestconsultancy.co.uk/presentations/understanding_rest_lite</a></p></small>
 				</section>
 			</div>
 		</div>
