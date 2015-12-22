@@ -7,7 +7,7 @@
 		<title>Understanding and Testing RESTful Web Services</title>
 
 		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
-		<meta name="author" content="Hakim El Hattab">
+		<meta name="author" content="Mark Winteringham">
 
 		<meta name="apple-mobile-web-app-capable" content="yes" />
 		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -180,65 +180,75 @@
 
 				<section>
 					<h3>What makes a service RESTful?</h3>
-					<div style="width: 450px; height: 400px; float: left">
-						<ul style="list-style: none; text-align: center; margin-top: 50px">
-							<li>Stateless</li>
-							<li>Cacheable</li>
-							<li>Uniform Interface</li>
-							<li>Client-Server</li>
-							<li>Layered System</li>
-							<li>Code on Demand</li>
-						</ul>
-						<div class="fragment" style="width: 310px; height: 50px; border-bottom: 2px solid red; position: absolute; margin-left: 90px; margin-top: -190px"></div>
+					<div style="float: left; width: 300px; height: 200px; padding: 0px 10px 0px 10px; border-right: 1px solid grey; margin-left: -10px">
+						<p>Stateless</p>
+						<small style="text-align: justify">Each request should contain all the neccesary information and each response should contain all session state data</small>
 					</div>
-					<div class="fragment" style="width: 450px; height: 300px; float: left; margin-top: 50px">
-						<p>A web service has to use specific standards to:</p>
-						<div style="width: 350px; height: 90px; float: left; font-size: 0.75em;">
-							<ul>
-								<li>Identify a resource</li>
-								<li>Manipulate a resource</li>
-							</ul>
-						</div>
-						<div class="fragment" style="width: 50px; height: 90px; float: left; font-size: 0.75em;">
-							<ul>
-								<li><span style="color: red">URIs</span></li>
-								<li><span style="color: red">HTTP</span></li>
-							</ul>
-						</div>
-						<small><a href='http://c2.com/cgi/wiki?RestArchitecturalStyle'>http://c2.com/cgi/wiki?RestArchitecturalStyle</a></small>
+					<div style="float: left; width: 300px; height: 200px; padding: 0px 10px 0px 10px; border-right: 1px solid grey">
+						<p>Cacheable</p>
+						<small style="text-align: justify">Service consumers can cache and reuse response message data</small>
+					</div>
+					<div style="float: left; width: 300px; height: 200px; padding: 0px 10px 0px 10px">
+						<p>Uniform Interface</p>
+						<small style="text-align: justify">Service consumers and services share a common, overarching, generic technical contract</small>
+					</div>
+					<div style="float: left; width: 300px; height: 200px; margin-top: 10px; padding: 0px 10px 0px 10px; border-right: 1px solid grey; margin-left: -10px">
+						<p>Client-Server</p>
+						<small style="text-align: justify">Solution logic is separated into consumer and service logic that share a technical contract</small>
+					</div>
+					<div style="float: left; width: 300px; height: 200px; margin-top: 10px; padding: 0px 10px 0px 10px; border-right: 1px solid grey">
+						<p>Layered System</p>
+						<small style="text-align: justify">A solution can be comprised of multiple architectural layers</small>
+					</div>
+					<div style="float: left; width: 300px; height: 200px; margin-top: 10px; padding: 0px 10px 0px 10px;">
+						<p>Code on Demand</p>
+						<small style="text-align: justify">Service consumers support the execution of deferred service logic</small>
+					</div>
+					<br />
+					<small><a href='http://whatisrest.com/rest_constraints/index'>http://whatisrest.com/rest_constraints/index</a></small>
+				</section>
+
+				<section>
+					<h3>Confused?</h3>
+					<div class="fragment">
+						<p>Richardson Maturity Model</p>
+						<table>
+							<tr><td>Level 3:</td><td>Hypermedia Controls</td></tr>
+							<tr><td>Level 2:</td><td>HTTP Verbs</td></tr>
+							<tr><td>Level 1:</td><td>Resources</td></tr>
+							<tr style='background-color: green'><td>Level 0:</td><td>Swamp of POX</td></tr>
+						</table>
+						<br />
+						<small><a href='http://martinfowler.com/articles/richardsonMaturityModel.html'>http://martinfowler.com/articles/richardsonMaturityModel.html</a></small>
 					</div>
 				</section>
 
 				<section>
-					<h3>A RESTful Web Service example</h3>
+					<h3>An HTTP RESTful Web Service example</h3>
 					<img src='./images/service.png' alt='services' style='border: none; background-color: white; padding: 10px;'/>
 					<small style='font-size: 0.4em; margin-left: 150px; margin-top: -20px'><a href='http://adrianmejia.com/blog/2014/10/01/creating-a-restful-api-tutorial-with-nodejs-and-mongodb/' />http://adrianmejia.com/blog/2014/10/01/creating-a-restful-api-tutorial-with-nodejs-and-mongodb/</a></small>
 				</section>
 
 				<section>
-					<h3>rest-reporter</h3>
-					<p><a href="https://github.com/mwinteringham/restful-booker">https://github.com/mwinteringham/restful-booker</a></p>
-					<p>rest-reporter is a C.R.U.D. service</p>
-				</section>
-
-				<section>
-					<ul style="list-style: none; margin-left: -20px;">
-						<li><h3>Create</h3></li>
-						<li class="fragment"><h3>Read</h3></li>
-						<li class="fragment"><h3>Update</h3></li>
-						<li class="fragment"><h3>Delete</h3></li>
-					</ul>
-				</section>
-
-				<section>
-					<h2>Read</h2>
+					<table>
+						<tr><td>Level 3:</td><td>Hypermedia Controls</td></tr>
+						<tr><td>Level 2:</td><td>HTTP Verbs</td></tr>
+						<tr style='background-color: yellow'><td>Level 1:</td><td>Resources</td></tr>
+						<tr><td>Level 0:</td><td>Swamp of POX</td></tr>
+					</table>
 				</section>
 
 				<section>
 					<h3>A typical HTTP Read request</h3>
 					<br />
-					<div class="fragment" style="position: absolute; margin-top: -31px; margin-left: 80px; text-align: right; color: green"><small>URI Path</small><div style="border: 3px solid green; width: 410px; height: 26px; "></div></div>
-					<div class="fragment" style="position: absolute; margin-top: 44px; margin-left: -70px; color: blue"><small>URI Host</small><div style="position: absolute; margin-left: 95px; margin-top: -46px; border: 3px solid blue; width: 260px; height: 24px; "></div></div>
+					<div class="fragment" style="position: absolute; margin-top: -12px; margin-left: 75px; text-align: left; color: green">
+						<small>URI Path</small>
+						<div style="margin-top: -19px; border: 3px solid green; width: 130px; height: 26px; "></div>
+					</div>
+					<div class="fragment" style="position: absolute; margin-top: 44px; margin-left: -70px; color: blue">
+						<small>URI Host</small>
+						<div style="position: absolute; margin-left: 95px; margin-top: -46px; border: 3px solid blue; width: 260px; height: 24px; "></div>
+					</div>
 					<img src="./images/readhttp.png" style="border: 0px"/>
 
 					<aside class="notes">
@@ -252,17 +262,17 @@
 						<div style="border: 2px solid black; width: 300px; height: 300px; margin: 50px -100px 0px 8px; background-color: black; color: white; font-size: 0.5em">
 							<p>Resource</p>
 							<div style="border: 1px dotted white; width: 250px; margin-left: 25px">
-								<p>Booking resource 1</p>
-								<p>_id: 5534e8cdbb97c77e0eb7ae51</p>
+								<p>Booking resource:</p>
+								<p>id: 1</p>
 							</div>							
 							<p>Something the service exposes to the end user to interact with such as an image, video, html, text, etc.</p>
 						</div>
 					</div>
 					<div class="fragment" style="width: 240px; height: 400px; float: left">
-						<div style="border: 1px solid red; height: 0px; width: 500px; margin: 172px 0px 0px -50px"><small style="font-size: 0.5em; margin-left: 20px">GET /booking/5534e8cdbb97c77e0eb7ae51</small></div>
+						<div style="border: 1px solid red; height: 0px; width: 500px; margin: 172px 0px 0px -50px"><small style="font-size: 0.5em; margin-left: -80px">GET /booking/1</small></div>
 					</div>
 					<div class="fragment" style="width: 400px; height: 400px; float: left; margin-left: 20px">
-						<img src="./images/jsonresource.png" alt="jsonresource" style="border: 0px; margin-top:126px; margin-left: 150px"/>
+						<img src="./images/jsonresource.png" alt="jsonresource" style="border: 0px; margin-top: 60px; margin-left: 60px"/>
 					</div>
 
 					<aside class="notes">
@@ -324,15 +334,28 @@
 				</section>
 
 				<section>
-					<h3>A typical HTTP Read request</h3>
+					<table>
+						<tr><td>Level 3:</td><td>Hypermedia Controls</td></tr>
+						<tr style='background-color: orange'><td>Level 2:</td><td>HTTP Verbs</td></tr>
+						<tr><td>Level 1:</td><td>Resources</td></tr>
+						<tr><td>Level 0:</td><td>Swamp of POX</td></tr>
+					</table>
+				</section>
+
+				<section>
+					<h3>A typical HTTP request</h3>
 					<br />
-					<div style="position: absolute; margin-top: -31px; margin-left: 25px; color: red"><small>HTTP Verb</small><div style="border: 3px solid red; width: 50px; height: 26px; "></div></div>
+					<div style="position: absolute; margin-top: -12px; margin-left: 25px; color: red">
+						<small>HTTP Verb</small>
+						<div style="margin-top: -19px; margin-left: -1px; border: 3px solid red; width: 42px; height: 26px; "></div>
+					</div>
 					<img src="./images/readhttp.png" style="border: 0px"/>
 				</section>
 
 				<section>
 					<h3>HTTP Verbs</h3>
 					<p>HTTP methods indicate an action the user would like to do on a resource</p>
+					<p>rest-reporter is a C.R.U.D. service</p>
 					<table>
 						<tr><td><h3>Create</h3></td><td>=</td><td><h3 style="text-align: right">POST</h3></td></tr>
 						<tr><td><h3>Read</h3></td><td>=</td><td><h3 style="text-align: right">GET</h3></td></tr>
@@ -356,38 +379,68 @@
 				</section>
 
 				<section>
-					<h3>A typical HTTP Read request</h3>
-					<br />
-					<div style="position: absolute; margin-top: 80px; margin-left: -70px; color: purple"><small>Headers</small><div style="position: absolute; margin-left: 95px; margin-top: -56px; border: 3px solid purple; width: 760px; height: 148px; "></div></div>
-					<img src="./images/readhttp.png" style="border: 0px"/>
-				</section>
-
-				<section>
-					<h3>HTTP Headers</h3>
-					<p style="font-size: 0.9em">Define the operating parameters of an HTTP request such as:</p>
-					<ul>
-						<li class="fragment" ><span style="color: red">What is requesting the resource</span></li>
-						<li class="fragment" ><span style="color: green">What format the resource should be in</span></li>
-						<li class="fragment" ><span style="color: blue">Authorisation that the resource can be requested</span></li>
-					</ul>
-					<p class="fragment" style="font-size: 0.8em">And more: <a href="https://en.wikipedia.org/wiki/List_of_HTTP_header_fields">https://en.wikipedia.org/wiki/List_of_HTTP_header_fields</a></p>
-				</section>
-
-				<section>
-					<h3>HTTP Headers</h3>
-					<p style="font-size: 0.8em">Adding headers can alter the behaviour of the service and its response</p>
 					<table>
-						<tr><td>Key:</td><td>Value</td><td>Outcome</td>
-						<tr class="fragment"><td>Accept:</td><td>application/json</td><td>JSON is returned</td></tr>
-						<tr class="fragment"><td>Accept:</td><td>application/xml</td><td>XML is returned</td></tr>
+						<tr style='background-color: red'><td>Level 3:</td><td>Hypermedia Controls</td></tr>
+						<tr><td>Level 2:</td><td>HTTP Verbs</td></tr>
+						<tr><td>Level 1:</td><td>Resources</td></tr>
+						<tr><td>Level 0:</td><td>Swamp of POX</td></tr>
 					</table>
+				</section>
 
-					<aside class="notes">
-						Demonstrate in POSTMAN
-						<br />
-						<br />
-						Consider test ideas when using headers. Consider adding extra headers, consider changing values valid and invalid
-					</aside>
+				<section>
+					<h3>A typical HTTP response</h3>
+					<div style="position: absolute; margin-top: 140px; margin-left: -60px; color: green"><small>Payload</small><div style="position: absolute; margin-left: 84px; margin-top: -45px; border: 3px solid green; width: 579px; height: 266px; "></div></div>
+					<img src="./images/response.png" alt="response" style="border: none"/>
+				</section>
+
+				<section>
+					<h3>Types of Payloads</h3>
+					<div class="fragment" style="width: 315px; height: 400px; float: left">
+						<h4 style="margin-left: -150px">JSON</h4>
+						<pre style="font-size: 0.4em; border: 1px solid #000; padding: 5px; width: 380px; margin-left: -100px">{
+  "firstName":"Sally",
+  "lastName":"Jackson",
+  "totalPrice":202,
+  "depositPaid":false,
+  "additionalNeeds": "Breakfast",
+  "bookingDates":{
+    "checkIn":"2015-02-26",
+    "checkOut":"2015-06-19"
+  }
+}</pre>
+					</div>
+					<div class="fragment" style="width: 315px; height: 400px; float: left;">
+						<h4>XML</h4>
+						<pre style="font-size: 0.4em; border: 1px solid #000; padding: 5px; width: 380px; text-align: left">
+
+&lt;firstName>Sally&lt;/firstName>
+&lt;lastName>Jackson&lt;/lastName>
+&lt;totalPrice>202&lt;/totalPrice>
+&lt;depositPaid>false&lt;/depositPaid>
+&lt;additionalNeeds>Breakfast&lt;/additionalNeeds>
+&lt;bookingDates>
+    &lt;checkIn>2015-02-26&lt;/checkIn>
+    &lt;checkOut>2015-06-19&lt;/checkOut>
+&lt;/bookingDates>
+
+</pre>
+					</div>
+					<div class="fragment" style="width: 315px; height: 400px; float: left;">
+						<h4 style="margin-left: 220px">HTML</h4>
+						<pre style="font-size: 0.4em; border: 1px solid #000; padding: 5px; width: 380px; text-align: left; margin-left: 100px">
+
+&lt;p>Sally&lt;/p>
+&lt;p>Jackson&lt;/p>
+&lt;p>202&lt;/p>
+&lt;p>false&lt;/p>
+&lt;p>Breakfast&lt;/p>
+&lt;ul>
+    &lt;li>2015-02-26&lt;/li>
+    &lt;li>2015-06-19&lt;/li>
+&lt;/ul>
+
+</pre>
+					</div>
 				</section>
 
 				<section>
@@ -422,65 +475,6 @@
 						<tr><td>500</td><td>Server error</td></tr>
 						<tr><td>503</td><td>Service is unavailable</td></tr>
 					</table>
-				</section>
-
-				<section>
-					<h3>A typical HTTP response</h3>
-					<div style="position: absolute; margin-top: 165px; margin-left: -60px; color: green"><small>Payload</small><div style="position: absolute; margin-left: 84px; margin-top: -45px; border: 3px solid green; width: 579px; height: 264px; "></div></div>
-					<img src="./images/response.png" alt="response" style="border: none"/>
-				</section>
-
-				<section>
-					<h3>Types of Payloads</h3>
-					<div class="fragment" style="width: 315px; height: 400px; float: left">
-						<h4 style="margin-left: -150px">JSON</h4>
-						<pre style="font-size: 0.4em; border: 1px solid #000; padding: 5px; width: 380px; margin-left: -100px">{
-  "_id":"5534e8cdbb97c77e0eb7ae65",
-  "firstName":"Jim",
-  "lastName":"Wilson",
-  "totalPrice":787,
-  "depositPaid":false,
-  "additionalNeeds": "Breakfast",
-  "bookingDates":{
-    "checkIn":"2013-08-10T22:34:22",
-    "checkOut":"2015-03-23T14:00:00"
-  }
-}</pre>
-					</div>
-					<div class="fragment" style="width: 315px; height: 400px; float: left;">
-						<h4>XML</h4>
-						<pre style="font-size: 0.4em; border: 1px solid #000; padding: 5px; width: 380px; text-align: left">
-
-&lt;_id>5534e8cdbb97c77e0eb7ae65&lt;/_id>
-&lt;firstName>Jim&lt;/firstName>
-&lt;lastName>Wilson&lt;/lastName>
-&lt;totalPrice>787&lt;/totalPrice>
-&lt;depositPaid>false&lt;/depositPaid>
-&lt;additionalNeeds>Breakfast&lt;/additionalNeeds>
-&lt;bookingDates>
-    &lt;checkIn>2013-08-10T22:34:22&lt;/checkIn>
-    &lt;checkOut>2015-03-23T14:00:00&lt;/checkOut>
-&lt;/bookingDates>
-
-</pre>
-					</div>
-					<div class="fragment" style="width: 315px; height: 400px; float: left;">
-						<h4 style="margin-left: 220px">HTML</h4>
-						<pre style="font-size: 0.4em; border: 1px solid #000; padding: 5px; width: 380px; text-align: left; margin-left: 100px">
-
-&lt;p>5534e8cdbb97c77e0eb7ae65&lt;/p>
-&lt;p>Jim&lt;/p>
-&lt;p>Wilson&lt;/p>
-&lt;p>787&lt;/p>
-&lt;p>false&lt;/p>
-&lt;p>breakfast&lt;/p>
-&lt;ul>
-    &lt;li>2013-08-10T22:34:22&lt;/li>
-    &lt;li>2015-03-23T14:00:00&lt;/li>
-&lt;/ul>
-
-</pre>
-					</div>
 				</section>
 
 				<section>
@@ -542,13 +536,12 @@
 				</section>
 
 				<section>
-					<h2>Create</h2>
-				</section>
-
-				<section>
 					<h3>A typical HTTP create request</h3>
 					<br />
-					<div class="fragment" style="position: absolute; margin-top: -31px; margin-left: 25px; color: red"><small>Change in HTTP Verb</small><div style="border: 3px solid red; width: 54px; height: 26px; "></div></div>
+					<div class="fragment" style="position: absolute; margin-top: -19px; margin-left: 25px; color: red">
+						<small>Change in HTTP Verb</small>
+						<div style="border: 3px solid red; width: 54px; height: 26px; margin-top: -9px"></div>
+					</div>
 					<div class="fragment" style="position: absolute; margin-top: 300px; margin-left: -70px; color: blue"><small>Payload</small><div style="position: absolute; margin-left: 95px; margin-top: -178px; border: 3px solid blue; width: 760px; height: 264px; "></div></div>
 					<img src='./images/createhttp.png' style='border: 0px' />
 				</section>
@@ -621,7 +614,7 @@
 							<li class="fragment"><div style="border: 2px solid red; width: 100px; height: 45px; position: absolute; margin-left: -455px; margin-top: 4px"></div><p style="color: red">String</p></li>
 							<li class="fragment"><div style="border: 2px solid green; width: 80px; height: 20px; position: absolute; margin-left: -434px; margin-top: -2px"></div><p style="color: green">Number</p></li>
 							<li class="fragment"><div style="border: 2px solid blue; width: 60px; height: 20px; position: absolute; margin-left: -420px; margin-top: -32px"></div><p style="color: blue">Boolean</p></li>
-							<li class="fragment"><div style="border: 2px solid purple; width: 160px; height: 45px; position: absolute; margin-left: -370px; margin-top: -16px"></div><p style="color: purple">Dates (String)</p></li>
+							<li class="fragment"><div style="border: 2px solid purple; width: 160px; height: 45px; position: absolute; margin-left: -370px; margin-top: -25px"></div><p style="color: purple">Dates (String)</p></li>
 						</ul>
 					</div>
 
@@ -648,15 +641,43 @@
 				</section>
 
 				<section>
-					<h3>POST Related headers</h3>
-					<table style="font-size: 0.9em">
-						<tr><td>Key</td><td>Value</td></tr>
-						<tr style="color: green"><td>Content-Type:</td><td>application/json, text/xml</td></tr>
-						<tr style="color: red"><td>Content-Length:</td><td>157</td></tr>
+					<h3>A typical HTTP Read request</h3>
+					<br />
+					<div style="position: absolute; margin-top: 80px; margin-left: -70px; color: purple">
+						<small>Headers</small>
+						<div style="position: absolute; margin-left: 94px; margin-top: -58px; border: 3px solid purple; width: 760px; height: 144px; "></div>
+					</div>
+
+					<img src="./images/readhttp.png" style="border: 0px"/>
+				</section>
+
+				<section>
+					<h3>HTTP Headers</h3>
+					<p style="font-size: 0.9em">Define the operating parameters of an HTTP request such as:</p>
+					<ul>
+						<li class="fragment" ><span style="color: red">What is requesting the resource</span></li>
+						<li class="fragment" ><span style="color: green">What format the resource should be in</span></li>
+						<li class="fragment" ><span style="color: blue">Authorisation that the resource can be requested</span></li>
+					</ul>
+					<p class="fragment" style="font-size: 0.8em">And more: <a href="https://en.wikipedia.org/wiki/List_of_HTTP_header_fields">https://en.wikipedia.org/wiki/List_of_HTTP_header_fields</a></p>
+				</section>
+
+				<section>
+					<h3>HTTP Headers</h3>
+					<p style="font-size: 0.8em">Adding headers can alter the behaviour of the service and its response</p>
+					<table>
+						<tr><td>Key:</td><td>Value</td><td>Outcome</td>
+						<tr class="fragment"><td>Accept:</td><td>application/json</td><td>JSON is returned</td></tr>
+						<tr class="fragment"><td>Accept:</td><td>application/xml</td><td>XML is returned</td></tr>
+						<tr class="fragment"><td>Content-Type:</td><td>application/json</td><td>JSON is accepted</td></tr>
+						<tr class="fragment"><td>Content-Type:</td><td>text/xml</td><td>XML is accepted</td></tr>
 					</table>
 
 					<aside class="notes">
-						Demonstrate a POST in POSTMAN
+						Demonstrate in POSTMAN
+						<br />
+						<br />
+						Consider test ideas when using headers. Consider adding extra headers, consider changing values valid and invalid
 					</aside>
 				</section>
 
@@ -683,10 +704,6 @@
 
 				<section>
 					<p>What did you learn?</p>
-				</section>
-
-				<section>
-					<h2>Update/Delete</h2>
 				</section>
 
 				<section>
@@ -728,7 +745,7 @@
 					<div class="fragment" style="width: 315px; margin-top: 50px; float: left; font-size: 0.9em;">
 						<p>POST /auth</p>
 						<pre style="border: 1px solid #000; padding: 5px; margin-top: 61px">{
-  user: admin,
+  username: admin,
   password: password123
 }</pre>
 					</div>
