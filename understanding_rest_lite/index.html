@@ -38,7 +38,7 @@
 
 		<div class="reveal">
 			<div class="slides">
-				<p style='font-size: 0.6em; position: relative; bottom: -93.5%;'><small>Understanding and testing RESTful Web Services - Created by <a href="http://mwtestconsultancy.co.uk">Mark Winteringham</a> / <a href="http://twitter.com/mwtestconsult">@mwtestconsult</a> &#169; 2015</small></p>
+				<p style='font-size: 0.6em; position: relative; bottom: -93.5%;'><small>Understanding and testing RESTful Web Services - Created by <a href="http://mwtestconsultancy.co.uk">Mark Winteringham</a> / <a href="http://twitter.com/2bittester">@2bittester</a> &#169; 2016</small></p>
 
 				<section>
 					<h3>Understanding and testing RESTful Web Services</h3>
@@ -56,7 +56,7 @@
 					<div style="float: left; text-align: left">
 						<h3>About me...</h3>
 						<p><small><img src="./images/www.png" style="border: 0px; height: 40px; margin-top: -5px; box-shadow: none; background: none"/> - <a href="http://mwtestconsultancy.co.uk/blog">www.mwtestconsultancy.co.uk</a></small></p>
-						<p><small><img src="./images/twitter.png" style="border: 0px; height: 40px; margin-top: -5px; box-shadow: none; background: none"/> - <a href="http://twitter.com/mwtestconsult">@mwtestconsult</a></small></p>
+						<p><small><img src="./images/twitter.png" style="border: 0px; height: 40px; margin-top: -5px; box-shadow: none; background: none"/> - <a href="http://twitter.com/2bittester">@2bittester</a></small></p>
 						<p><small><img src="./images/linkedin.png" style="border: 0px; height: 40px; margin-top: -5px; box-shadow: none; background: none"> - <a href="linkedin.com/in/markwinteringham">linkedin.com/in/markwinteringham</a></small></p>
 					</div>
 
@@ -67,8 +67,8 @@
 
 				<section>
 					<h3>Workshop goals</h3>
-					<p class="fragment">Explore the basics of a RESTful WebServices</p>
-					<p class="fragment">Build requests to query and manipulate data</p>
+					<p class="fragment">Explore the fundamentals of a RESTful Web services</p>
+					<p class="fragment">Build different requests to query and manipulate data</p>
 					<p class="fragment">Try out different test design techniques</p>
 					<p class="fragment">Going forward...</p>
 
@@ -207,9 +207,8 @@
 				</section>
 
 				<section>
-					<h3>Confused?</h3>
-					<div class="fragment">
-						<p>Richardson Maturity Model</p>
+					<h3>Richardson Maturity Model</h3>
+					<div>
 						<table>
 							<tr><td>Level 3:</td><td>Hypermedia Controls</td></tr>
 							<tr><td>Level 2:</td><td>HTTP Verbs</td></tr>
@@ -298,7 +297,7 @@
 
 				<section>
 					<h3>Query strings</h3>
-					<p>A query string indicates additional actions you might want to apply to the resource/resources you want</p>
+					<p>A query string indicates additional actions you might want to apply to the resource you want</p>
 					<div class="fragment">
 						<pre><code>GET /booking?checkin=2014-03-13&amp;checkout=2014-05-21</code></pre>
 						<p>Returns all bookings between two dates whereas:</p>
@@ -387,57 +386,51 @@
 
 				<section>
 					<h3>A typical HTTP response</h3>
-					<div style="position: absolute; margin-top: 140px; margin-left: -60px; color: green"><small>Payload</small><div style="position: absolute; margin-left: 84px; margin-top: -45px; border: 3px solid green; width: 579px; height: 266px; "></div></div>
+					<div style="position: absolute; margin-top: 115px; margin-left: -60px; color: green"><small>Payload</small><div style="position: absolute; margin-left: 84px; margin-top: -45px; border: 3px solid green; width: 620px; height: 410px; "></div></div>
 					<img src="./images/response.png" alt="response" style="border: none"/>
 				</section>
 
-				<section>
+								<section>
 					<h3>Types of Payloads</h3>
-					<div class="fragment" style="width: 315px; height: 400px; float: left">
-						<h4 style="margin-left: -150px">JSON</h4>
-						<pre style="font-size: 0.4em; border: 1px solid #000; padding: 5px; width: 380px; margin-left: -100px">{
-  "firstName":"Sally",
-  "lastName":"Jackson",
-  "totalPrice":202,
-  "depositPaid":false,
-  "additionalNeeds": "Breakfast",
-  "bookingDates":{
-    "checkIn":"2015-02-26",
-    "checkOut":"2015-06-19"
+					<div class="fragment" style="width: 450px; height: 400px; float: left">
+						<h4>JSON</h4>
+						<pre style="font-size: 0.4em; border: 1px solid #000; padding: 5px; width: 425px">{
+  "booking": {
+    "firstname": "Sally",
+    "lastname": "Brown",
+    "totalprice": 111,
+    "depositpaid": true,
+    "additionalneeds": "Breakfast",
+    "bookingdates": {
+      "checkin": "2013-02-23",
+      "checkout": "2014-10-23"
+    }
+  },
+  "link": {
+    "rel": "self",
+    "href": "http://localhost:3001/booking/1"
   }
 }</pre>
 					</div>
-					<div class="fragment" style="width: 315px; height: 400px; float: left;">
+					<div class="fragment" style="width: 450px; height: 400px; float: left;">
 						<h4>XML</h4>
-						<pre style="font-size: 0.4em; border: 1px solid #000; padding: 5px; width: 380px; text-align: left">
-
-&lt;firstName>Sally&lt;/firstName>
-&lt;lastName>Jackson&lt;/lastName>
-&lt;totalPrice>202&lt;/totalPrice>
-&lt;depositPaid>false&lt;/depositPaid>
-&lt;additionalNeeds>Breakfast&lt;/additionalNeeds>
-&lt;bookingDates>
-    &lt;checkIn>2015-02-26&lt;/checkIn>
-    &lt;checkOut>2015-06-19&lt;/checkOut>
-&lt;/bookingDates>
-
-</pre>
-					</div>
-					<div class="fragment" style="width: 315px; height: 400px; float: left;">
-						<h4 style="margin-left: 220px">HTML</h4>
-						<pre style="font-size: 0.4em; border: 1px solid #000; padding: 5px; width: 380px; text-align: left; margin-left: 100px">
-
-&lt;p>Sally&lt;/p>
-&lt;p>Jackson&lt;/p>
-&lt;p>202&lt;/p>
-&lt;p>false&lt;/p>
-&lt;p>Breakfast&lt;/p>
-&lt;ul>
-    &lt;li>2015-02-26&lt;/li>
-    &lt;li>2015-06-19&lt;/li>
-&lt;/ul>
-
-</pre>
+						<pre style="font-size: 0.4em; border: 1px solid #000; padding: 5px; width: 425px; text-align: left">&lt;created-booking>
+  &lt;booking>
+    &lt;firstname>Sally&lt;/firstname>
+    &lt;lastname>Brown&lt;/lastname>
+    &lt;totalprice>111&lt;/totalprice>
+    &lt;depositpaid>true&lt;/depositpaid>
+    &lt;additionalneeds>Breakfast&lt;/additionalneeds>
+    &lt;bookingdates>
+      &lt;checkin>2013-02-23&lt;/checkin>
+      &lt;checkout>2014-10-23&lt;/checkout>
+    &lt;/bookingdates>
+  &lt;/booking>
+  &lt;link>
+    &lt;rel>self&lt;/rel>
+    &lt;href>http://localhost:3001/booking/1&lt;/href>
+  &lt;/link>
+&lt;/created-booking></pre>
 					</div>
 				</section>
 
