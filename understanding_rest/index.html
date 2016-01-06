@@ -67,15 +67,17 @@
 
 				<section>
 					<h3>Workshop goals</h3>
-					<p class="fragment">Explore the fundamentals of a RESTful Web services</p>
+					<p class="fragment">Explore what is a Web Service and what makes it RESTful</p>
+					<p class="fragment">Discover different test design techniques</p>
 					<p class="fragment">Build different requests to query and manipulate data</p>
-					<p class="fragment">Try out different test design techniques</p>
 					<p class="fragment">Going forward with the skills you've learnt</p>
 
 					<aside class="notes">
-						Ask if any of the group have experience of testing REST and HTTP
-						<br />
-						Explain people that we are going to look at some familiar stuff but in close detail to see how we can leverage it for testing
+						<ul>
+							<li>Determine roles.  Who is a tester, who is a dev</li>
+							<li>Ask if any of the group have experience of testing REST and HTTP</li>
+							<li>To people who have prior exp.  It may seem basic but we want to explore how these elements affect our test design</li>
+						</ul>
 					</aside>
 				</section>
 
@@ -86,6 +88,12 @@
 					<div style="width: 500px; text-align: center; border-top: 1px dotted #000; font-size: 0.75em; margin-left: 230px">
 						<p>A restful webservice that allows hotels to store booking details about their guests</p>
 					</div>
+
+					<aside class="notes">
+						<ul>
+							<li>I'm the product owner as well as the speaker</li>
+						</ul>
+					</aside>
 				</section>
 
 				<section>
@@ -110,6 +118,10 @@
 						<p>Restful booker: <a href="https://github.com/mwinteringham/restful-booker">www.github.com/mwinteringham/restful-booker</a></p>
 						<p>API details are in the README</p>
 					</div>
+
+					<aside class="notes">
+						<p>Code is available on GitHub but I encourage using the Services I have setup rather than attempting to run the service locally</p>
+					</aside>
 				</section>
 
 				<section>
@@ -125,6 +137,12 @@
 					<h3>Restful Web Service</h3>
 					<div class="fragment" style="width: 220px; height: 70px; border-bottom: 2px solid red; position: absolute; margin-left: 199px; margin-top: -95px"></div>
 					<div class="fragment" style="width: 330px; height: 70px; border-bottom: 2px solid green; position: absolute; margin-left: 435px; margin-top: -95px"></div>
+
+					<aside class="notes">
+						<ul>
+							<li>They are two different parts at play</li>
+						</ul>
+					</aside>
 				</section>
 
 				<section>
@@ -133,6 +151,12 @@
 					<p style="font-size: 0.9em">'A Web service is a software system designed to support interoperable machine-to-machine interaction over a network.'</p>
 					<small style="margin-left: 490px; font-size: 0.4em"><a href="http://www.w3.org/TR/2004/NOTE-ws-gloss-20040211/#webservice">http://www.w3.org/TR/2004/NOTE-ws-gloss-20040211/#webservice</a></small>
 					<div class="fragment" style="width: 483px; height: 25px; border-bottom: 2px solid red; position: absolute; margin-left: 220px; margin-top: -95px"></div>
+
+					<aside class="notes">
+						<ul>
+							<li>When looking for a short intro on a web service I found W3Cs description quite succint</li>
+						</ul>
+					</aside>
 				</section>
 
 				<section>
@@ -171,6 +195,12 @@
 							<p style="font-size: 0.75em; margin-top: -20px">Search</p>
 						</div>
 					</div>
+
+					<aside class="notes">
+						<ul>
+							<li>Reports store search queries and run them when the report is being retrieved</li>
+						</ul>
+					</aside>
 				</section>
 
 				<section>
@@ -206,6 +236,14 @@
 					</div>
 					<br />
 					<small><a href='http://whatisrest.com/rest_constraints/index'>http://whatisrest.com/rest_constraints/index</a></small>
+
+					<aside class="notes">
+						<ul>
+							<li><small>A series of architectural constraints that the web service must apply to.  This means that not all Web Services a necessarily RESTful</small></li>
+							<li><small>Notice no mention of technologies - we can use technologies to addess the constraints but no visa versa</small></li>
+							<li><small>How does this affect how we test a service and what we do we need to test for</small></li>
+						</ul>
+					</aside>
 				</section>
 
 				<section>
@@ -220,12 +258,27 @@
 						<br />
 						<small><a href='http://martinfowler.com/articles/richardsonMaturityModel.html'>http://martinfowler.com/articles/richardsonMaturityModel.html</a></small>
 					</div>
+
+					<aside class="notes">
+						<ul>
+							<li>A model (developed by Leonard Richardson) that breaks down the principal elements of a REST approach.</li>
+							<li>We're going to go through these elements and consider how we might test them</li>
+						</ul>
+					</aside>
 				</section>
 
 				<section>
 					<h3>An HTTP RESTful Web Service example</h3>
 					<img src='./images/service.png' alt='services' style='border: none; background-color: white; padding: 10px;'/>
 					<small style='font-size: 0.4em; margin-left: 150px; margin-top: -20px'><a href='http://adrianmejia.com/blog/2014/10/01/creating-a-restful-api-tutorial-with-nodejs-and-mongodb/' />http://adrianmejia.com/blog/2014/10/01/creating-a-restful-api-tutorial-with-nodejs-and-mongodb/</a></small>
+
+					<aside class="notes">
+						<ul>
+							<li>Swamp of POX means the service uses it's implementing protocol as a transport protocol.</li>
+							<li>For example they will use HTTP (or SOAP or XML-RPC) to tunnel requests and responses.  Usually through one endpoint</li>
+							<li>RESTful booker will be using HTTP</li>
+						</ul>
+					</aside>
 				</section>
 
 				<section>
@@ -235,23 +288,28 @@
 						<tr style='background-color: yellow'><td>Level 1:</td><td>Resources</td></tr>
 						<tr><td>Level 0:</td><td>Swamp of POX</td></tr>
 					</table>
+
+					<aside class="notes">
+						<p>We start breaking out the endpoints</p>
+					</aside>
 				</section>
 
 				<section>
 					<h3>A typical HTTP Read request</h3>
 					<br />
-					<div class="fragment" style="position: absolute; margin-top: -12px; margin-left: 75px; text-align: left; color: green">
+					<div style="position: absolute; margin-top: -12px; margin-left: 75px; text-align: left; color: green">
 						<small>URI Path</small>
 						<div style="margin-top: -19px; border: 3px solid green; width: 130px; height: 26px; "></div>
 					</div>
-					<div class="fragment" style="position: absolute; margin-top: 44px; margin-left: -70px; color: blue">
+					<div style="position: absolute; margin-top: 44px; margin-left: -70px; color: blue">
 						<small>URI Host</small>
 						<div style="position: absolute; margin-left: 95px; margin-top: -46px; border: 3px solid blue; width: 260px; height: 24px; "></div>
 					</div>
 					<img src="./images/readhttp.png" style="border: 0px"/>
 
 					<aside class="notes">
-						Start by looking at URI part of request
+						<li>Start by looking at URI part of request</li>
+						<li>What is a URI?</li>
 					</aside>
 				</section>
 
@@ -390,6 +448,10 @@
 					<h3>A typical HTTP response</h3>
 					<div style="position: absolute; margin-top: 115px; margin-left: -60px; color: green"><small>Payload</small><div style="position: absolute; margin-left: 84px; margin-top: -45px; border: 3px solid green; width: 620px; height: 410px; "></div></div>
 					<img src="./images/response.png" alt="response" style="border: none"/>
+
+					<aside class="notes">
+						<p>Break this into two parts.  The response and the link part of the response</p>
+					</aside>
 				</section>
 
 				<section>
@@ -434,17 +496,24 @@
   &lt;/link>
 &lt;/created-booking></pre>
 					</div>
+
+					<aside class="notes">
+						<ul>
+							<li>JSON is not RESTful as it doesn't use a hypermedia format since there is no predetermined way for link discovery in JSON</li>
+							<li>However it is still heavily used in Web Services</li>
+						</ul>
+					</aside>
 				</section>
 
 				<section>
 					<h3>A typical HTTP response</h3>
-					<div class="fragment" style="position: absolute; margin-top: -10px; margin-left: 134px; color: red"><small>HTTP Status code</small><div style="position: absolute; margin-left: 0px; margin-top: -15px; border: 3px solid red; width: 86px; height: 20px; "></div></div>
+					<div style="position: absolute; margin-top: -10px; margin-left: 134px; color: red"><small>HTTP Status code</small><div style="position: absolute; margin-left: 0px; margin-top: -15px; border: 3px solid red; width: 86px; height: 20px; "></div></div>
 					<img src="./images/response.png" alt="response" style="border: none"/>
 				</section>
 
 				<section>
 					<h3>HTTP Status codes</h3>
-					<p style="font-size: 0.75em">Indicator of how the server has responded to the request you've sent</p>
+					<p style="font-size: 0.75em">Indicator of how the service has responded to the request you've sent</p>
 					
 					<table>
 						<tr><td>1xx</td><td>Informational</td></tr>
@@ -531,11 +600,11 @@
 				<section>
 					<h3>A typical HTTP create request</h3>
 					<br />
-					<div class="fragment" style="position: absolute; margin-top: -19px; margin-left: 25px; color: red">
+					<div style="position: absolute; margin-top: -19px; margin-left: 25px; color: red">
 						<small>Change in HTTP Verb</small>
 						<div style="border: 3px solid red; width: 54px; height: 26px; margin-top: -9px"></div>
 					</div>
-					<div class="fragment" style="position: absolute; margin-top: 300px; margin-left: -70px; color: blue"><small>Payload</small><div style="position: absolute; margin-left: 95px; margin-top: -178px; border: 3px solid blue; width: 760px; height: 264px; "></div></div>
+					<div style="position: absolute; margin-top: 300px; margin-left: -70px; color: blue"><small>Payload</small><div style="position: absolute; margin-left: 95px; margin-top: -178px; border: 3px solid blue; width: 760px; height: 264px; "></div></div>
 					<img src='./images/createhttp.png' style='border: 0px' />
 				</section>
 
@@ -588,6 +657,23 @@
 				</section>
 
 				<section>
+					<h3>Robustness principle</h3>
+					<div>
+						<p style="font-style: italic; font-size: 0.8em">`Be conservative in what you do, be liberal in what you accept from others`</p>
+						<p style="text-align: right">Postel's law</p>
+					</div>
+					<br />
+					<ul class="fragment" style="font-size: 0.7em;">
+						<li>When sending a payload the service should conform to the contract being sent</li>
+						<li>When receiving a payload the service should accept invalid data without error</li>
+					</ul>
+
+					<aside class="notes">
+						Consider test ideas what happens when you remove, add or change locations of parameters in the payload
+					</aside>
+				</section>
+
+				<section>
 					<h3>Data types</h3>
 					<pre style="box-shadow: none; width: 520px; margin-left: -50px; float: left">
 						<code style="height: 260px;">{
@@ -613,23 +699,6 @@
 
 					<aside class="notes">
 						Consider test ideas when creating payloads. Consider ways you can change data types and boundaries.
-					</aside>
-				</section>
-
-				<section>
-					<h3>Robustness principle</h3>
-					<div>
-						<p style="font-style: italic; font-size: 0.8em">`Be conservative in what you do, be liberal in what you accept from others`</p>
-						<p style="text-align: right">Postel's law</p>
-					</div>
-					<br />
-					<ul class="fragment" style="font-size: 0.7em;">
-						<li>When sending a payload the service should conform to the contract being sent</li>
-						<li>When receiving a payload the service should accept invalid data without error</li>
-					</ul>
-
-					<aside class="notes">
-						Consider test ideas what happens when you remove, add or change locations of parameters in the payload
 					</aside>
 				</section>
 
