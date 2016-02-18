@@ -4,7 +4,7 @@
 	<head>
 		<meta charset="utf-8">
 
-		<title>Understanding and Testing RESTful Web Services</title>
+		<title>Understanding and Testing Web Services</title>
 
 		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
 		<meta name="author" content="Mark Winteringham">
@@ -38,10 +38,10 @@
 
 		<div class="reveal">
 			<div class="slides">
-				<p style='font-size: 0.6em; position: relative; bottom: -93.5%;'><small>Understanding and testing RESTful Web Services - Created by <a href="http://mwtestconsultancy.co.uk">Mark Winteringham</a> / <a href="http://twitter.com/2bittester">@2bittester</a> &#169; 2016</small></p>
+				<p style='font-size: 0.6em; position: relative; bottom: -93.5%;'><small>Understanding and testing Web Services - Created by <a href="http://mwtestconsultancy.co.uk">Mark Winteringham</a> / <a href="http://twitter.com/2bittester">@2bittester</a> &#169; 2016</small></p>
 
 				<section>
-					<h3>Understanding and testing RESTful Web Services</h3>
+					<h3>Understanding and testing Web Services</h3>
 
 					<p style='font-size: 0.6em'>Available at <a href='http://mwtestconsultancy.co.uk/presentations/understanding_rest_lite' alt='slide location'>http://mwtestconsultancy.co.uk/presentations/understanding_rest_lite</a></p>
 					<br />
@@ -67,7 +67,7 @@
 
 				<section>
 					<h3>Workshop goals</h3>
-					<p class="fragment">Explore the fundamentals of a RESTful Web services</p>
+					<p class="fragment">Explore what is a Web Service</p>
 					<p class="fragment">Build different requests to query and manipulate data</p>
 					<p class="fragment">Try out different test design techniques</p>
 					<p class="fragment">Going forward...</p>
@@ -82,7 +82,7 @@
 				<section>
 					<h3>RESTFUL-BOOKER</h3>
 					<div style="width: 500px; text-align: center; border-top: 1px dotted #000; font-size: 0.75em; margin-left: 230px">
-						<p>A restful webservice that allows hotels to store booking details about their guests</p>
+						<p>A webservice that allows hotels to store booking details about their guests</p>
 					</div>
 				</section>
 
@@ -117,12 +117,6 @@
 					<aside class="notes">
 						Fire up POSTMAN and go through the basics
 					</aside>
-				</section>
-				
-				<section>
-					<h3>Restful Web Service</h3>
-					<div class="fragment" style="width: 220px; height: 70px; border-bottom: 2px solid red; position: absolute; margin-left: 199px; margin-top: -95px"></div>
-					<div class="fragment" style="width: 330px; height: 70px; border-bottom: 2px solid green; position: absolute; margin-left: 435px; margin-top: -95px"></div>
 				</section>
 
 				<section>
@@ -177,62 +171,9 @@
 				</section>
 
 				<section>
-					<h3>What makes a service RESTful?</h3>
-					<div style="float: left; width: 300px; height: 200px; padding: 0px 10px 0px 10px; border-right: 1px solid grey; margin-left: -10px">
-						<p>Stateless</p>
-						<small style="text-align: justify">Each request should contain all the neccesary information and each response should contain all session state data</small>
-					</div>
-					<div style="float: left; width: 300px; height: 200px; padding: 0px 10px 0px 10px; border-right: 1px solid grey">
-						<p>Cacheable</p>
-						<small style="text-align: justify">Service consumers can cache and reuse response message data</small>
-					</div>
-					<div style="float: left; width: 300px; height: 200px; padding: 0px 10px 0px 10px">
-						<p>Uniform Interface</p>
-						<small style="text-align: justify">Service consumers and services share a common, overarching, generic technical contract</small>
-					</div>
-					<div style="float: left; width: 300px; height: 200px; margin-top: 10px; padding: 0px 10px 0px 10px; border-right: 1px solid grey; margin-left: -10px">
-						<p>Client-Server</p>
-						<small style="text-align: justify">Solution logic is separated into consumer and service logic that share a technical contract</small>
-					</div>
-					<div style="float: left; width: 300px; height: 200px; margin-top: 10px; padding: 0px 10px 0px 10px; border-right: 1px solid grey">
-						<p>Layered System</p>
-						<small style="text-align: justify">A solution can be comprised of multiple architectural layers</small>
-					</div>
-					<div style="float: left; width: 300px; height: 200px; margin-top: 10px; padding: 0px 10px 0px 10px;">
-						<p>Code on Demand</p>
-						<small style="text-align: justify">Service consumers support the execution of deferred service logic</small>
-					</div>
-					<br />
-					<small><a href='http://whatisrest.com/rest_constraints/index'>http://whatisrest.com/rest_constraints/index</a></small>
-				</section>
-
-				<section>
-					<h3>Richardson Maturity Model</h3>
-					<div>
-						<table>
-							<tr><td>Level 3:</td><td>Hypermedia Controls</td></tr>
-							<tr><td>Level 2:</td><td>HTTP Verbs</td></tr>
-							<tr><td>Level 1:</td><td>Resources</td></tr>
-							<tr style='background-color: green'><td>Level 0:</td><td>Swamp of POX</td></tr>
-						</table>
-						<br />
-						<small><a href='http://martinfowler.com/articles/richardsonMaturityModel.html'>http://martinfowler.com/articles/richardsonMaturityModel.html</a></small>
-					</div>
-				</section>
-
-				<section>
-					<h3>An HTTP RESTful Web Service example</h3>
+					<h3>A Web Service example</h3>
 					<img src='./images/service.png' alt='services' style='border: none; background-color: white; padding: 10px;'/>
 					<small style='font-size: 0.4em; margin-left: 150px; margin-top: -20px'><a href='http://adrianmejia.com/blog/2014/10/01/creating-a-restful-api-tutorial-with-nodejs-and-mongodb/' />http://adrianmejia.com/blog/2014/10/01/creating-a-restful-api-tutorial-with-nodejs-and-mongodb/</a></small>
-				</section>
-
-				<section>
-					<table>
-						<tr><td>Level 3:</td><td>Hypermedia Controls</td></tr>
-						<tr><td>Level 2:</td><td>HTTP Verbs</td></tr>
-						<tr style='background-color: yellow'><td>Level 1:</td><td>Resources</td></tr>
-						<tr><td>Level 0:</td><td>Swamp of POX</td></tr>
-					</table>
 				</section>
 
 				<section>
@@ -261,7 +202,7 @@
 							<div style="border: 1px dotted white; width: 250px; margin-left: 25px">
 								<p>Booking resource:</p>
 								<p>id: 1</p>
-							</div>							
+							</div>
 							<p>Something the service exposes to the end user to interact with such as an image, video, html, text, etc.</p>
 						</div>
 					</div>
@@ -331,15 +272,6 @@
 				</section>
 
 				<section>
-					<table>
-						<tr><td>Level 3:</td><td>Hypermedia Controls</td></tr>
-						<tr style='background-color: orange'><td>Level 2:</td><td>HTTP Verbs</td></tr>
-						<tr><td>Level 1:</td><td>Resources</td></tr>
-						<tr><td>Level 0:</td><td>Swamp of POX</td></tr>
-					</table>
-				</section>
-
-				<section>
 					<h3>A typical HTTP request</h3>
 					<br />
 					<div style="position: absolute; margin-top: -12px; margin-left: 25px; color: red">
@@ -347,18 +279,6 @@
 						<div style="margin-top: -19px; margin-left: -1px; border: 3px solid red; width: 42px; height: 26px; "></div>
 					</div>
 					<img src="./images/readhttp.png" style="border: 0px"/>
-				</section>
-
-				<section>
-					<h3>HTTP Verbs</h3>
-					<p>HTTP methods indicate an action the user would like to do on a resource</p>
-					<p>rest-reporter is a C.R.U.D. service</p>
-					<table>
-						<tr><td><h3>Create</h3></td><td>=</td><td><h3 style="text-align: right">POST</h3></td></tr>
-						<tr><td><h3>Read</h3></td><td>=</td><td><h3 style="text-align: right">GET</h3></td></tr>
-						<tr><td><h3>Update</h3></td><td>=</td><td><h3 style="text-align: right">PUT</h3></td></tr>
-						<tr><td><h3>Delete</h3></td><td>=</td><td><h3 style="text-align: right">DELETE</h3></td></tr>
-					</table>
 				</section>
 
 				<section>
@@ -376,41 +296,34 @@
 				</section>
 
 				<section>
-					<table>
-						<tr style='background-color: red'><td>Level 3:</td><td>Hypermedia Controls</td></tr>
-						<tr><td>Level 2:</td><td>HTTP Verbs</td></tr>
-						<tr><td>Level 1:</td><td>Resources</td></tr>
-						<tr><td>Level 0:</td><td>Swamp of POX</td></tr>
-					</table>
+					<h3>A typical HTTP response</h3>
+					<div style="position: absolute; margin-top: 80px; margin-left: -60px; color: green"><small>Payload</small><div style="position: absolute; margin-left: 84px; margin-top: -45px; border: 3px solid green; width: 620px; height: 350px; "></div></div>
+					<img src="./images/response.png" alt="response" style="border: none"/>
+
+					<aside class="notes">
+						<p>Break this into two parts.  The response and the link part of the response</p>
+					</aside>
 				</section>
 
 				<section>
-					<h3>A typical HTTP response</h3>
-					<div style="position: absolute; margin-top: 115px; margin-left: -60px; color: green"><small>Payload</small><div style="position: absolute; margin-left: 84px; margin-top: -45px; border: 3px solid green; width: 620px; height: 410px; "></div></div>
-					<img src="./images/response.png" alt="response" style="border: none"/>
-				</section>
-
-								<section>
 					<h3>Types of Payloads</h3>
 					<div class="fragment" style="width: 450px; height: 400px; float: left">
 						<h4>JSON</h4>
-						<pre style="font-size: 0.4em; border: 1px solid #000; padding: 5px; width: 425px">{
-  "booking": {
-    "firstname": "Sally",
-    "lastname": "Brown",
-    "totalprice": 111,
-    "depositpaid": true,
-    "additionalneeds": "Breakfast",
-    "bookingdates": {
-      "checkin": "2013-02-23",
-      "checkout": "2014-10-23"
-    }
-  },
-  "link": {
-    "rel": "self",
-    "href": "http://localhost:3001/booking/1"
+						<pre style="font-size: 0.4em; border: 1px solid #000; padding: 5px; width: 425px;">
+
+"booking": {
+  "firstname": "Sally",
+  "lastname": "Brown",
+  "totalprice": 111,
+  "depositpaid": true,
+  "additionalneeds": "Breakfast",
+  "bookingdates": {
+    "checkin": "2013-02-23",
+    "checkout": "2014-10-23"
   }
-}</pre>
+}
+
+</pre>
 					</div>
 					<div class="fragment" style="width: 450px; height: 400px; float: left;">
 						<h4>XML</h4>
@@ -426,10 +339,6 @@
       &lt;checkout>2014-10-23&lt;/checkout>
     &lt;/bookingdates>
   &lt;/booking>
-  &lt;link>
-    &lt;rel>self&lt;/rel>
-    &lt;href>http://localhost:3001/booking/1&lt;/href>
-  &lt;/link>
 &lt;/created-booking></pre>
 					</div>
 				</section>
@@ -443,7 +352,7 @@
 				<section>
 					<h3>HTTP Status codes</h3>
 					<p style="font-size: 0.75em">Indicator of how the server has responded to the request you've sent</p>
-					
+
 					<table>
 						<tr><td>1xx</td><td>Informational</td></tr>
 						<tr><td>2xx</td><td>Success</td></tr>
@@ -629,7 +538,7 @@
 				<section data-markdown>
 					<script type="text/template">
 					###HTTP Headers - Cookies
-					
+
 					Cookies are also a type of header and can be added to a request
 					```
 					Cookie: COOKIEVAL1=abc; COOKIEVAL2=def;
@@ -686,7 +595,7 @@ Cookie: token=abc123
 					<h3>PUT</h3>
 					<p>Similar to POST but rather than <span style="font-weight: bold">create</span> it <span style="font-weight: bold">updates</span></p>
 					<p>However, in the real world that might not be the case:</p>
-					<p><a href="http://stackoverflow.com/questions/630453/put-vs-post-in-rest">PUT vs POST in REST</a></p>
+					<p><a href="http://stackoverflow.com/questions/630453/put-vs-post-in-rest">PUT vs POST</a></p>
 
 					<aside class="notes">
 						Demonstrate a PUT in POSTMAN
@@ -703,7 +612,7 @@ Cookie: token=abc123
 				</section>
 
 				<section>
-					<h3>Taking RESTful testing further</h3>
+					<h3>Taking Web Service testing further</h3>
 				</section>
 
 				<section>
@@ -728,7 +637,7 @@ Cookie: token=abc123
 						</div>
 						<div class="fragment" style="margin-top: -180px; margin-left: 100px; ">
 							<div style="height: 175px; width: 200px; border: 1px solid blue;"></div>
-							<small>RESTful testing</small>
+							<small>Web service testing</small>
 						</div>
 					</div>
 				</section>
@@ -772,7 +681,7 @@ Cookie: token=abc123
 					{ src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
 					{ src: 'plugin/zoom-js/zoom.js', async: true },
 					{ src: 'plugin/notes/notes.js', async: true },
-					
+
         			{ src: 'plugin/notes-server/client.js', async: true }
 				]
 			});
